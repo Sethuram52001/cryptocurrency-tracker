@@ -15,7 +15,7 @@ class App extends React.Component {
 
   componentDidMount()
   {
-    console.log('Component Mounted');
+    console.log('App Component Mounted');
     const getData = () =>{
       fetch(api_url).then(d => d.json()).then((Data) =>{
         const arr = [];
