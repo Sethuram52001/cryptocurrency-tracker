@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+
+
+.StatsDisplay_container{
+  background-color: #f2f5fa;
+  padding: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.StatsBar{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'acumin-pro';
 }
 
-.App-link {
-  color: #61dafb;
+.heading{
+  text-align: left;
+  /*font-weight: 1000;
+  font-size: large;*/
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text{
+  font-weight: 1000;
+  font-size: large;
+  text-align: left;
+}
+
+.currentPriceBox{
+  width:30%;
+}
+
+.dailyChangeBox{
+  width:30%;
+}
+
+.monthlyChangeBox{
+  width:30%;
 }

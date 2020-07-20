@@ -1,8 +1,10 @@
 import React from 'react';
 import StatsDisplay from './components/StatsDisplay'
 import Graph from './components/Graph'
+import LineChart from './components/LineChart'
 import MarkerPrice from './components/MarkerPrice'
 import moment from 'moment';
+import  './App.css'
 
 const api_url = 'https://api.coindesk.com/v1/bpi/historical/close.json';
 
@@ -44,7 +46,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
+      <div className="StatsDisplay_container">
+      {this.state.data ?
       <StatsDisplay data={this.state.data}></StatsDisplay>
+      :null}
+      </div>
+      <div className="LineChart_container">
+      {!this.state.fetchingData ?  
+      <LineChart data={this.state.data}></LineChart>
+      :null}
+      </div>
+    {/*<Graph/>*/}
       </div>
     );
   }
