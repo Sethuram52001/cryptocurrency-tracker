@@ -54,4 +54,27 @@
 .linechart_area{
   /*fill: #FFC859;*/
   fill: transparent;
+  /*fill: linear-gradient(#fff,#f3f);*/
+}
+
+.hoverLine{
+  stroke: #7D95B6;
+  stroke-width: 1;
+}
+
+.hover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  /*background-color: #2196F3;*/
+  background-color: #FFC859;
+  color: white;
+}
+
+.hover .price {
+  font-weight: 700;
 }

@@ -149,7 +149,7 @@ class LineChart extends Component {
         svgX: this.getSvgX(point.index),
         svgY: this.getSvgY(point.pValue),
         d: point.date,
-        p: point.pValue,
+        p: point.pDollars,
       });
     });
 
@@ -204,7 +204,7 @@ class LineChart extends Component {
   {
     const {svgHeight, xLabelSize} = this.props;
     return (
-          <line className='hoverLine' x1={this.state.hoverLoc} y1={-8} x2={this.state.hoverLoc} y2={svgHeight-xLabelSize} ></line>
+          <line className='hoverLine' x1={this.state.hoverLoc} y1={-8} x2={this.state.hoverLoc} y2={svgHeight - xLabelSize}></line>
       );  
   }
 
@@ -212,9 +212,9 @@ class LineChart extends Component {
     const {svgHeight, svgWidth} = this.props;
 
     return (
-      <svg  width={svgWidth} height={svgHeight} viewBox={`0 0 ${svgWidth} ${svgHeight}`} className={'linechart'}>
-           {/* onMouseLeave={ () => this.stopHover() }
-            onMouseMove={ (e) => this.getCoords(e) } >*/}
+      <svg  width={svgWidth} height={svgHeight} viewBox={`0 0 ${svgWidth} ${svgHeight}`} className={'linechart'}
+            onMouseLeave={ () => this.stopHover() } 
+            onMouseMove={ (e) => this.getCoords(e) } >
         <g>
           {this.makeAxis()}
           {this.makePath()}
@@ -239,4 +239,5 @@ LineChart.defaultProps = {
 }
 
 export default LineChart;
+
 

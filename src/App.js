@@ -1,11 +1,8 @@
 import React from 'react';
 import StatsDisplay from './components/StatsDisplay'
 import LineChart from './components/LineChart'
-import {RangeSlider} from './components/MaterialUi'
-import SvgLineChart from './components/SvgLineChart'
-import  ToolTip from './components/ToolTip'
+import ToolTip from './components/ToolTip'
 import moment from 'moment';
-import { Slider } from 'material-ui-slider';
 import  './App.css'
 
 const api_url = 'https://api.coindesk.com/v1/bpi/historical/close.json';
@@ -73,8 +70,6 @@ class App extends React.Component {
       <LineChart data={this.state.data} onHover={(a,b) => this.handleHover(a,b)} ></LineChart>
       :null}
       </div>
-      <div><Slider></Slider></div>
-      {/*<div><RangeSlider /></div>*/}
       </div>
     );
   }
