@@ -1,9 +1,11 @@
 import React from 'react';
 import StatsDisplay from './components/StatsDisplay'
-import Graph from './components/Graph'
 import LineChart from './components/LineChart'
-import MarkerPrice from './components/MarkerPrice'
+import {RangeSlider} from './components/MaterialUi'
+import SvgLineChart from './components/SvgLineChart'
+import  ToolTip from './components/ToolTip'
 import moment from 'moment';
+import { Slider } from 'material-ui-slider';
 import  './App.css'
 
 const api_url = 'https://api.coindesk.com/v1/bpi/historical/close.json';
@@ -13,6 +15,8 @@ class App extends React.Component {
   state={
     fetchingData: true,
     data: null,
+    hoverLoc: null,
+    activePoint: null
   }
 
   componentDidMount()
@@ -43,6 +47,14 @@ class App extends React.Component {
     getData();
   }
 
+  handleHover(hoverLoc,activePoint)
+  {
+    this.setState({
+      hoverLoc: hoverLoc,
+      activePoint: activePoint 
+    });
+  }
+
   render() {
     return (
       <div>
@@ -51,15 +63,22 @@ class App extends React.Component {
       <StatsDisplay data={this.state.data}></StatsDisplay>
       :null}
       </div>
-      <div className="LineChart_container">
-      {!this.state.fetchingData ?  
-      <LineChart data={this.state.data}></LineChart>
+      <div className='ToolTip_container'>
+      {this.state.hoverLoc ? 
+      <ToolTip hoverLoc={this.state.hoverLoc} activePoint={this.state.activePoint}/> 
       :null}
       </div>
-    {/*<Graph/>*/}
+      <div className="LineChart_container">
+      {!this.state.fetchingData ?  
+      <LineChart data={this.state.data} onHover={(a,b) => this.handleHover(a,b)} ></LineChart>
+      :null}
+      </div>
+      <div><Slider></Slider></div>
+      {/*<div><RangeSlider /></div>*/}
       </div>
     );
   }
 }
 
 export default App;
+

@@ -3,6 +3,7 @@
 .StatsDisplay_container{
   background-color: #f2f5fa;
   padding: 2px;
+  /*display: flex;*/
 }
 
 .StatsBar{
@@ -34,4 +35,23 @@
 
 .monthlyChangeBox{
   width:30%;
+}
+
+.LineChart_container{
+  padding: 10px;
+  border: 2px;
+  display: flex;
+}
+
+.linechart_path {
+  stroke-width: 3; /* Thick Line */
+  fill: none;      /*No Fill*/
+}
+.linechart_axis {
+  stroke: #bdc3c7; /*Grey Axis Color*/
+}
+
+.linechart_area{
+  /*fill: #FFC859;*/
+  fill: transparent;
 }
