@@ -24,7 +24,9 @@ class StatsDisplay extends React.Component {
 			dailyChangeP:null,
 			monthlyChange: null,//monthly change
 			monthlyChangeP: null,
-			lastUpdated: null
+			lastUpdated: null,
+			valueChangeD: -1, // fa icon color
+			valueChangeM: -1
 	}
 
 	componentDidMount = () =>
@@ -49,7 +51,9 @@ class StatsDisplay extends React.Component {
       				dailyChangeP:daily_changeP.toFixed(2) + '%',
       				monthlyChange:monthly_change.toLocaleString('us-EN',{style:'currency',currency:'USD'}),
       				monthlyChangeP:monthly_changeP.toFixed(2) + '%',
-      				lastUpdated:last_updated 
+      				lastUpdated:last_updated, 
+      				valueChangeD:daily_change,
+      				valueChangeM:monthly_change
       			});
 			}).catch((e)=>{console.log(e);}); 
 		}
@@ -68,12 +72,18 @@ class StatsDisplay extends React.Component {
 					<div className="dailyChangeBox">
 						<div className="heading">24 HOUR CHANGE </div>
 						<div className="text">{this.state.dailyChange}</div>
-						<div className="text">{this.state.dailyChangeP}</div>
+						<div className="text">{this.state.valueChangeD >= 0 && <i className="fa fa-caret-up fa-1x " style={{color:"#66F900"}} aria-hidden="true"></i>}
+											  {this.state.valueChangeD < 0 && <i className="fa fa-caret-down fa-1x " style={{color:"#F93500"}} aria-hidden="true"></i>}		
+						  					  {this.state.dailyChangeP}
+						</div>
 					</div>
 					<div className="monthlyChangeBox">
 						<div className="heading">MONTHLY CHANGE</div>
 						<div className="text">{this.state.monthlyChange}</div>
-						<div className="text">{this.state.monthlyChangeP}</div>
+						<div className="text">{this.state.valueChangeM >= 0 && <i className="fa fa-caret-up fa-1x" style={{color:"#66F900"}} aria-hidden="true"></i>} 
+											  {this.state.valueChangeM < 0 && <i className="fa fa-caret-down fa-1x " style={{color:"#F93500"}} aria-hidden="true"></i>}
+						 					  {this.state.monthlyChangeP}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -83,4 +93,5 @@ class StatsDisplay extends React.Component {
 
 export default StatsDisplay;
 					
-				
+/*<i class="fa fa-caret-up" aria-hidden="true"></i>*/
+/*<i class="fa fa-caret-down" aria-hidden="true" style={{color:"#F93500"}}></i>*/

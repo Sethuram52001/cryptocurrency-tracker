@@ -212,10 +212,17 @@ class LineChart extends Component {
     const {svgHeight, svgWidth} = this.props;
 
     return (
+      <div>
       <svg  width={svgWidth} height={svgHeight} viewBox={`0 0 ${svgWidth} ${svgHeight}`} className={'linechart'}
             onMouseLeave={ () => this.stopHover() } 
             onMouseMove={ (e) => this.getCoords(e) } >
-        <g>
+
+            <linearGradient x1="0" y1="0" x2="100%" y2="100%" id="gradient">
+              <stop stop-color="#c86dd7" offset="0"/>
+              <stop stop-color="#3023ae" offset="100%"/>
+            </linearGradient>
+
+        <g fill="url(#gradient)">
           {this.makeAxis()}
           {this.makePath()}
           {this.makeArea()}
@@ -224,6 +231,7 @@ class LineChart extends Component {
           {this.state.hoverLoc ? this.makeActivePoint() : null}
         </g>
       </svg>
+      </div>
     );
   }
 }
@@ -240,4 +248,31 @@ LineChart.defaultProps = {
 
 export default LineChart;
 
+/*<i class="fa fa-line-chart" aria-hidden="true"></i>*/
 
+/*
+              <stop stopColor="#FF8F00" offset="0"/>
+              <stop stopColor="#FFE4C0" offset="100%"/>
+*/
+
+/*
+            <linearGradient x1="0" y1="0" x2="100%" y2="100%" id="gradient">
+              <stop stop-color="#c86dd7" offset="0"/>
+              <stop stop-color="#3023ae" offset="100%"/>
+            </linearGradient>
+*/
+
+/*
+            <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="100%">
+              <stop offset="0" stop-color="#FFB600" />
+              <stop offset="100" stop-color="#FFD765" />
+            </linearGradient>
+*/
+
+
+/*
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            </linearGradient>
+*/

@@ -54,22 +54,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-      <div className="StatsDisplay_container">
-      {this.state.data ?
-      <StatsDisplay data={this.state.data}></StatsDisplay>
-      :null}
-      </div>
-      <div className='ToolTip_container'>
-      {this.state.hoverLoc ? 
-      <ToolTip hoverLoc={this.state.hoverLoc} activePoint={this.state.activePoint}/> 
-      :null}
-      </div>
-      <div className="LineChart_container">
-      {!this.state.fetchingData ?  
-      <LineChart data={this.state.data} onHover={(a,b) => this.handleHover(a,b)} ></LineChart>
-      :null}
-      </div>
+      <div className="main">
+        <div className="title"><h1>Bitcoin Tracker</h1></div>
+        <div className="StatsDisplay_container">
+        {this.state.data ?
+        <StatsDisplay data={this.state.data}></StatsDisplay>
+        :null}
+        </div>
+        <div className="linechart_title">
+        <h3>Line Chart <i className="fa fa-line-chart" aria-hidden="true"></i> </h3>
+        </div>
+        <div className='ToolTip_container'>
+        {this.state.hoverLoc ? 
+        <ToolTip hoverLoc={this.state.hoverLoc} activePoint={this.state.activePoint}/> 
+        :null}
+        </div>
+        <div className="LineChart_container">
+        {!this.state.fetchingData ?  
+        <LineChart data={this.state.data} onHover={(a,b) => this.handleHover(a,b)} ></LineChart>
+        :null}
+        </div>
+        <div className="Reference"><a href="https://www.coindesk.com/price/bitcoin" target="_blank">Powered by CoinDesk</a></div>
       </div>
     );
   }
