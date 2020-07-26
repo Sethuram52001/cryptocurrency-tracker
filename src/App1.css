@@ -1,66 +1,18 @@
-.main{
-  background-color: #f2f5fa;
-  font-family: 'acumin-pro';
-}
-
-.StatsDisplay_container{
-  background-color: #ffffff;
-  padding: 2px;
-  border: 2px;
-  margin:2%;
-  text-transform: uppercase;
-  width: 80%;
-  align-self: center;
-  position: absolute;
-  margin-left: 10%;
-  /*display: flex;*/
-}
-
-.StatsBar{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  font-family: 'acumin-pro';
-}
-
-.heading{
-  text-align: left;
-  /*font-weight: 1000;
-  font-size: large;*/
-}
-
-.text{
-  font-weight: 1000;
-  font-size: large;
-  text-align: left;
-}
-
-.currentPriceBox{
-  width:30%;
-}
-
-.dailyChangeBox{
-  width:30%;
-}
-
-.monthlyChangeBox{
-  width:30%;
-}
-
 .LineChart_container{
   padding: 10px;
   border: 2px;
   margin: 1%;
   display: flex;
   background-color: #ffffff;
-  }
-
-.linechart_path {
-  stroke-width: 3; /* Thick Line */
-  fill: none;      /*No Fill*/
 }
-.linechart_axis {
-  stroke: #bdc3c7; /*Grey Axis Color*/
+
+.linechart_path{
+  stroke-width: 3;/*thick line*/
+  fill: none;
+}
+
+.linechart_axis{
+  stroke: #bdc3c7;
 }
 
 .linechart_area{
@@ -69,43 +21,21 @@
   /*fill: "url(#grad1)";*/
 }
 
+.linechart_label{}
+
+.linechart_point{
+  fill: #ffffff;
+}
+
 .hoverLine{
   stroke: #7D95B6;
   stroke-width: 1;
 }
 
-.hover {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  position: absolute;
-  padding: 5px;
-  border-radius: 4px;
-  /*background-color: #2196F3;*/
-  /*background-color: #FFC859;*/
-  background-color: #FF8F00;
-  color: white;
-}
-
-.hover .price {
-  font-weight: 700;
-}
-
-.ToolTip_container{
-  margin: 10%;
-}
-
 .linechart_title{
-  border: 5%
+  margin-left: 2%;
 }
 
-.Reference{
-  align-content: center;
-  text-align: center;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
+.linechart{
+  padding: 2%;
 }

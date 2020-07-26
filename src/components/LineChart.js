@@ -218,8 +218,8 @@ class LineChart extends Component {
             onMouseMove={ (e) => this.getCoords(e) } >
 
             <linearGradient x1="0" y1="0" x2="100%" y2="100%" id="gradient">
-              <stop stop-color="#c86dd7" offset="0"/>
-              <stop stop-color="#3023ae" offset="100%"/>
+              <stop stopColor="#c86dd7" offset="0"/>
+              <stop stopColor="#3023ae" offset="100%"/>
             </linearGradient>
 
         <g fill="url(#gradient)">
