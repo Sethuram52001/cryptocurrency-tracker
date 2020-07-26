@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class ToolTip extends Component {
 
   render() {
-    const {hoverLoc, activePoint} = this.props;
+    const {hoverLoc, activePoint} = this.props;// to get the point on the line chart
+    //The Element.getBoundingClientRect() method returns the size of an element and 
+    //its position relative to the viewport.
     const svgLocation = document.getElementsByClassName("linechart")[0].getBoundingClientRect();
 
     let placementStyles = {};

@@ -1,11 +1,161 @@
+
+
+
+
+
+
+
+
+
+
+.main{
+  background-color: #f2f5fa;
+  font-family: 'acumin-pro';
+}
+
+.title{
+  margin-left: 2%;
+}
+
+.StatsDisplay_container{
+  background-color: #ffffff;
+  padding: 2%;
+  border: 2%;
+  margin: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-transform: uppercase;
+  width: 80%;
+  align-self: center;
+  /*position: absolute;*/
+}
+
+@media only screen and (min-width: 450px) {
+.StatsBar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-family: 'acumin-pro';
+}
+
+.currentPriceBox{
+  width: 30%;
+  padding: 2%;
+}
+
+.dailyChangeBox{
+  width: 30%;
+  padding: 2%;
+  border-left: 1px solid #DAE1E9;
+  border-right: 1px solid #DAE1E9;
+}
+
+.monthlyChangeBox{
+  width: 30%;
+  padding: 2%;
+}
+}
+
+@media only screen and (max-width : 450px) {
+.StatsBar{
+  width: 100%;
+  /*display: flex;*/
+  justify-content: center;
+  padding: 1%;
+  font-family: 'acumin-pro';
+}
+.currentPriceBox{
+  padding: 2%;
+}
+
+.dailyChangeBox{
+  padding: 2%;
+  border-top: 1px solid #DAE1E9;
+  border-bottom:  1px solid #DAE1E9;
+}
+
+.monthlyChangeBox{
+  padding: 2%;
+}
+}
+
+.heading{
+  text-align: left;
+  /*font-weight: 1000;
+  font-size: large;*/
+}
+
+.text{
+  font-weight: 1000;
+  font-size: large;
+  text-align: left;
+  /*font-size: 3%;*/
+}
+
+@media only screen and (min-width: 450px) {
+.ToolTip_container{
+  min-height: 50px;
+  margin: 2%;
+}
+
+.hover{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  /*background-color: #2196F3;*/
+  /*background-color: #FFC859;*/
+  background-color: #FF8F00;
+  color: white;
+}
+}
+
+@media only screen and (max-width: 450px) {
+.ToolTip_container{
+  min-height: 50px;
+  margin: 2%;
+  max-width: 400px;
+}
+
+.hover{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  padding: 5px;
+  border-radius: 4px;
+  /*background-color: #2196F3;*/
+  /*background-color: #FFC859;*/
+  background-color: #FF8F00;
+  color: white;
+  max-width: 400px;
+}
+}
+
+.date{
+  font-weight: 700;
+}
+
+.price{
+  font-weight: 700;
+}
+
 .LineChart_container{
-  padding: 10px;
-  border: 2px;
+  padding: 2%;
   margin: 1%;
   display: flex;
   background-color: #ffffff;
+  
 }
 
+@media only screen and (min-width: 450px) {
+.linechart{
+  display: flex;
+  /*max-width: 360px;*/
+}
 .linechart_path{
   stroke-width: 3;/*thick line*/
   fill: none;
@@ -21,10 +171,12 @@
   /*fill: "url(#grad1)";*/
 }
 
-.linechart_label{}
+.linechart_label{
+ fill: #FF7800;
+ font-weight: 700;
+}
 
 .linechart_point{
-  fill: #ffffff;
 }
 
 .hoverLine{
@@ -35,7 +187,56 @@
 .linechart_title{
   margin-left: 2%;
 }
-
-.linechart{
-  padding: 2%;
 }
+
+@media only screen and (max-width: 450px) {
+.linechart{
+  display: flex;
+  max-width: 400px;
+}
+
+.linechart_path{
+  stroke-width: 3;/*thick line*/
+  fill: none;
+  max-width: 400px;
+}
+
+.linechart_axis{
+  stroke: #bdc3c7;
+  max-width: 400px;
+}
+
+.linechart_area{
+  /*fill: #FFC859;*/
+  /*fill: transparent;*/
+  /*fill: "url(#grad1)";*/
+}
+
+.linechart_label{
+ fill: #FF7800;
+ font-weight: 700;
+ max-width: 400px;
+}
+
+.linechart_point{
+}
+
+.hoverLine{
+  stroke: #7D95B6;
+  stroke-width: 1;
+  max-width: 400px;
+}
+
+.linechart_title{
+  margin-left: 2%;
+  max-width: 400px;
+}
+
+}
+
+.Reference{
+  align-content: center;
+  text-align: center;
+}
+
+

@@ -5,19 +5,6 @@ const api_url = 'https://api.coindesk.com/v1/bpi/currentprice.json';
 
 class StatsDisplay extends React.Component {
 
-	/*constructor(props) 
-	{
-		super(props);
-		this.state={
-			currentPrice: null,
-			dailyChange: null,//24 hour change
-			dailyChangeP:null,
-			monthlyChange: null,//monthly change
-			monthlyChangeP: null,
-			lastUpdated: null
-		}
-	}*/
-
 	state={
 			currentPrice: 0,
 			dailyChange: null,//24 hour change
@@ -26,7 +13,7 @@ class StatsDisplay extends React.Component {
 			monthlyChangeP: null,
 			lastUpdated: null,
 			valueChangeD: -1, // fa icon color
-			valueChangeM: -1
+			valueChangeM: -1 // fa icon color 
 	}
 
 	componentDidMount = () =>
@@ -95,3 +82,16 @@ export default StatsDisplay;
 					
 /*<i class="fa fa-caret-up" aria-hidden="true"></i>*/
 /*<i class="fa fa-caret-down" aria-hidden="true" style={{color:"#F93500"}}></i>*/
+
+	/*constructor(props) 
+	{
+		super(props);
+		this.state={
+			currentPrice: null,
+			dailyChange: null,//24 hour change
+			dailyChangeP:null,
+			monthlyChange: null,//monthly change
+			monthlyChangeP: null,
+			lastUpdated: null
+		}
+	}*/

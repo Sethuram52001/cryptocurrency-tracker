@@ -47,8 +47,8 @@ class App extends React.Component {
   handleHover(hoverLoc,activePoint)
   {
     this.setState({
-      hoverLoc: hoverLoc,
-      activePoint: activePoint 
+      hoverLoc: hoverLoc,//hover location
+      activePoint: activePoint //active point on the line chart
     });
   }
 
